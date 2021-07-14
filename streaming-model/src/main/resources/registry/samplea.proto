@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+// v3
+
+option java_multiple_files = true;
+package com.agregsandbox.modela;
+option java_package = "com.agregsandbox.modela";
+
+import "google/protobuf/timestamp.proto";
+
+
+message GatewayErrorA {  
+    string route = 1;
+    string headers = 2;
+    string body = 3;
+    string exMessage = 4; 
+    string exStackTrace = 5;
+    google.protobuf.Timestamp timestamp = 6;
+}
+
+message MyMessageA {  
+    int32 id = 1;
+    string name = 2;
+    google.protobuf.Timestamp timestamp = 3;
+}
+
+message MyMessageB {  
+    int32 id = 1;
+    string name = 2;
+    google.protobuf.Timestamp timestamp = 3;
+}
+
+

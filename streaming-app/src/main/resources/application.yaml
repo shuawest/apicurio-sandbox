@@ -1,0 +1,79 @@
+# Camel Config
+camel:
+    context: 
+        name: mockapp
+
+registryurl: http://apicurioregistry-aregsandbox.apps.ocpa.milab.joshwest.me/apis/registry/v2
+registryurlProp: apicurio.registry.url
+globalid: io.apicurio.registry.utils.serde.strategy.GetOrCreateIdStrategy
+
+# CyptoAI gateway config
+aregsandbox:
+    hawtio:
+      enabled: false
+      auth-enabled: false
+      war-location: /Users/jowest/dev/repos/coinbase/etc/hawtio.war
+      port: 9001
+    kafka:
+        brokers: oaw2.ocpa.milab.joshwest.me:30082 #nodeport
+    app:
+      name: mockapp
+      destination:
+        destination: kafka
+        topic-name: samples
+    
+# Quarkus Config
+quarkus:
+    http:
+      port: 8082
+    openshift:
+        labels:
+            app: mockapp
+        expose: true
+    container-image:
+        build: false
+        builder: openshift
+        #builder: jib
+        #builder: docker
+    kubernetes:
+        deploy: false
+        deployment-target: openshift    
+    kubernetes-client:
+        trust-certs: true
+    # Quarkus dev mode - start dev mode with `./mvnw quarkus:remote-dev`
+    package:
+        type: mutable-jar
+    live-reload:
+        password: asdfASDF
+    kubernetes.env.vars.QUARKUS_LAUNCH_DEVMODE: true
+    openshift.env-vars.quarkus-launch-devmode.value: true
+    live-reload.url: http://mockapp-aregsandbox.apps.ocpa.milab.joshwest.me
+    # Logging Config
+    log:
+        level: INFO
+        min-level: INFO
+        category:
+            "com.aregsandbox":
+                level: DEBUG
+            "io.apicurio":
+                level: TRACE
+            # "io.vertx":
+            #     level: TRACE
+            # "org.apache.camel.quarkus.component":
+            #     level: TRACE
+            # "org.apache":
+            #     level: DEBUG
+        # console:
+        #     level: DEBUG
+        #     format: "%d{HH:mm:ss} %-5p [%c{2.}] (%t) %s%e%n"
+        #     color: true
+    # Pod config
+#   openshift:
+#       env.vars.my-env-var: foobar
+#       env.secrets: my-secret,my-other-secret
+#       env.configmaps: my-config-map,another-config-map
+#       mounts.my-volume.path: /where/to/mount
+
+
+
+

@@ -1,0 +1,534 @@
+Joshs-MacBook-Pro:streaming-app jowest$ ./mvnw quarkus:dev
+[WARNING]
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] 'profiles.profile.id' must be unique but found duplicate profile with id extra-repos @ /Users/jowest/.m2/settings.xml
+[WARNING]
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: osx
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.classifier: osx-x86_64
+[INFO]
+[INFO] -------------------< com.aregsandbox:streaming-app >--------------------
+[INFO] Building streaming-app 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- quarkus-maven-plugin:1.12.2.Final:dev (default-cli) @ streaming-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /Users/jowest/dev/repos/apicurio-sandbox/streaming-app/target/classes
+[INFO] /Users/jowest/dev/repos/apicurio-sandbox/streaming-app/src/main/java/com/aregsandbox/services/ProducerService.java: /Users/jowest/dev/repos/apicurio-sandbox/streaming-app/src/main/java/com/aregsandbox/services/ProducerService.java uses or overrides a deprecated API.
+[INFO] /Users/jowest/dev/repos/apicurio-sandbox/streaming-app/src/main/java/com/aregsandbox/services/ProducerService.java: Recompile with -Xlint:deprecation for details.
+Listening for transport dt_socket at address: 5005
+[INFO] Checking for existing resources in: /Users/jowest/dev/repos/apicurio-sandbox/streaming-app/src/main/kubernetes.
+__  ____  __  _____   ___  __ ____  ______
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/
+2021-07-13 18:12:17,612 WARN  [io.qua.boo.res.mav.BootstrapMavenContext] (main) Settings problem encountered at /Users/jowest/.m2/settings.xml
+2021-07-13 18:12:23,863 WARN  [io.qua.res.com.dep.ResteasyCommonProcessor] (build-9) Quarkus detected the need of REST JSON support but you have not provided the necessary JSON extension for this. You can visit https://quarkus.io/guides/rest-json for more information on how to set one.
+2021-07-13 18:12:25,179 WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus."kubernetes.env.vars.QUARKUS_LAUNCH_DEVMODE"" was provided; it will be ignored; verify that the dependency extension for this configuration is set or you did not make a typo
+2021-07-13 18:12:25,179 WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus."live-reload.url"" was provided; it will be ignored; verify that the dependency extension for this configuration is set or you did not make a typo
+2021-07-13 18:12:25,179 WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus."openshift.env-vars.quarkus-launch-devmode.value"" was provided; it will be ignored; verify that the dependency extension for this configuration is set or you did not make a typo
+2021-07-13 18:12:25,810 WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus."kubernetes.env.vars.QUARKUS_LAUNCH_DEVMODE"" was provided; it will be ignored; verify that the dependency extension for this configuration is set or you did not make a typo
+2021-07-13 18:12:25,810 WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus."live-reload.url"" was provided; it will be ignored; verify that the dependency extension for this configuration is set or you did not make a typo
+2021-07-13 18:12:25,810 WARN  [io.qua.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus."openshift.env-vars.quarkus-launch-devmode.value"" was provided; it will be ignored; verify that the dependency extension for this configuration is set or you did not make a typo
+2021-07-13 18:12:25,865 WARN  [io.qua.run.log.LoggingSetupRecorder] (Quarkus Main Thread) Log level DEBUG for category 'com.aregsandbox' set below minimum logging level INFO, promoting it to INFO
+2021-07-13 18:12:25,865 WARN  [io.qua.run.log.LoggingSetupRecorder] (Quarkus Main Thread) Log level TRACE for category 'io.apicurio' set below minimum logging level INFO, promoting it to INFO
+2021-07-13 18:12:25,960 INFO  [com.are.mgm.HawtioService] (Quarkus Main Thread) Starting Hawtio on port %s (auth enabled: %s)
+2021-07-13 18:12:25,973 INFO  [jetty] (Quarkus Main Thread) Logging initialized @8773ms to org.eclipse.jetty.util.log.Slf4jLog
+Implicitly setting Scheme = http
+2021-07-13 18:12:26,026 INFO  [jetty] (Quarkus Main Thread) Using temp directory for jetty: /Users/jowest/.hawtio/tmp
+Embedded Hawtio: You can use --help to show usage
+Using options [
+	war=/Users/jowest/dev/repos/coinbase/etc/hawtio.war
+	contextPath=/hawtio
+	host=0.0.0.0
+	port=9001
+	plugins=plugins
+	openUrl=true
+	jointServerThread=false
+	help=false]
+About to start Hawtio /Users/jowest/dev/repos/coinbase/etc/hawtio.war
+2021-07-13 18:12:26,027 INFO  [org.ecl.jet.ser.Server] (Quarkus Main Thread) jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 12.0.1+12
+2021-07-13 18:12:26,761 INFO  [org.ecl.jet.web.StandardDescriptorProcessor] (Quarkus Main Thread) NO JSP Support for /hawtio, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2021-07-13 18:12:26,779 INFO  [org.ecl.jet.ser.session] (Quarkus Main Thread) DefaultSessionIdManager workerName=node0
+2021-07-13 18:12:26,779 INFO  [org.ecl.jet.ser.session] (Quarkus Main Thread) No SessionScavenger set, using defaults
+2021-07-13 18:12:26,781 INFO  [org.ecl.jet.ser.session] (Quarkus Main Thread) node0 Scavenging every 660000ms
+2021-07-13 18:12:26,786 INFO  [io.haw.HawtioContextListener] (Quarkus Main Thread) Initialising hawtio services
+2021-07-13 18:12:26,873 INFO  [io.haw.sys.ConfigManager] (Quarkus Main Thread) Configuration will be discovered via system properties
+2021-07-13 18:12:26,875 INFO  [io.haw.jmx.JmxTreeWatcher] (Quarkus Main Thread) Welcome to Hawtio 2.13.2
+2021-07-13 18:12:26,879 INFO  [io.haw.web.aut.AuthenticationConfiguration] (Quarkus Main Thread) Starting hawtio authentication filter, JAAS authentication disabled
+2021-07-13 18:12:26,905 INFO  [io.haw.sys.ProxyAllowlist] (Quarkus Main Thread) Probing local addresses ...
+2021-07-13 18:12:26,914 INFO  [io.haw.sys.ProxyAllowlist] (Quarkus Main Thread) Initial proxy allowlist: [localhost, 127.0.0.1, 192.168.1.179, 192.168.110.2]
+2021-07-13 18:12:27,033 INFO  [io.haw.web.ser.JolokiaConfiguredAgentServlet] (Quarkus Main Thread) Jolokia has not found any overriden configuration property passed at launch time; Default configuration values will be used.
+2021-07-13 18:12:27,043 INFO  [org.ecl.jet.ser.han.Con.hawtio] (Quarkus Main Thread) jolokia-agent: No access restrictor found, access to any MBean is allowed
+2021-07-13 18:12:27,184 INFO  [org.ecl.jet.ser.han.ContextHandler] (Quarkus Main Thread) Started o.e.j.w.WebAppContext@6c767079{hawtio,/hawtio,file:///Users/jowest/.hawtio/tmp/webapp/,AVAILABLE}{/Users/jowest/dev/repos/coinbase/etc/hawtio.war}
+2021-07-13 18:12:27,184 INFO  [org.ecl.jet.web.WebAppContext] (Quarkus Main Thread) hawtio at http://ServerConnector@4b8e6a48{HTTP/1.1, (http/1.1)}{0.0.0.0:9001}/hawtio
+2021-07-13 18:12:27,206 INFO  [org.ecl.jet.ser.AbstractConnector] (Quarkus Main Thread) Started ServerConnector@4b8e6a48{HTTP/1.1, (http/1.1)}{0.0.0.0:9001}
+2021-07-13 18:12:27,207 INFO  [org.ecl.jet.ser.Server] (Quarkus Main Thread) Started @10007ms
+
+Welcome to Hawtio
+=====================================================
+
+http://localhost:9001/hawtio
+
+2021-07-13 18:12:27,217 INFO  [com.are.ser.ProducerService] (Quarkus Main Thread) Kafka connection A: kafka:samplea-topic?brokers={{aregsandbox.kafka.brokers}}&valueSerializer=io.apicurio.registry.serde.protobuf.ProtobufKafkaSerializer&maxRequestSize=5242880&additionalProperties.apicurio.registry.url={{registryurl}}&additionalProperties.apicurio.registry.artifact.group-id=aregsandbox&additionalProperties.apicurio.registry.artifact.artifact-id=samplea&additionalProperties.apicurio.registry.find-latest=true&additionalProperties.apicurio.registry.check-period-ms=60000
+
+
+
+2021-07-13 18:12:27,218 INFO  [com.are.ser.ProducerService] (Quarkus Main Thread) Kafka connection B: kafka:sampleb-topic?brokers={{aregsandbox.kafka.brokers}}&valueSerializer=io.apicurio.registry.serde.protobuf.ProtobufKafkaSerializer&maxRequestSize=5242880&additionalProperties.apicurio.registry.url={{registryurl}}&additionalProperties.apicurio.registry.artifact.group-id=aregsandbox&additionalProperties.apicurio.registry.artifact.artifact-id=sampleb&additionalProperties.apicurio.registry.find-latest=true&additionalProperties.apicurio.registry.check-period-ms=60000
+
+
+
+2021-07-13 18:12:27,224 INFO  [org.apa.cam.qua.cor.CamelBootstrapRecorder] (Quarkus Main Thread) bootstrap runtime: org.apache.camel.quarkus.core.CamelContextRuntime
+2021-07-13 18:12:27,234 INFO  [org.apa.cam.man.JmxManagementStrategy] (Quarkus Main Thread) JMX is enabled
+2021-07-13 18:12:49,692 INFO  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) ProducerConfig values:
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [oaw2.ocpa.milab.joshwest.me:30082]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 5242880
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.apicurio.registry.serde.protobuf.ProtobufKafkaSerializer
+
+2021-07-13 18:12:49,767 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.artifact.group-id' was supplied but isn't a known config.
+2021-07-13 18:12:49,767 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.artifact.artifact-id' was supplied but isn't a known config.
+2021-07-13 18:12:49,767 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.find-latest' was supplied but isn't a known config.
+2021-07-13 18:12:49,767 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.url' was supplied but isn't a known config.
+2021-07-13 18:12:49,767 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.check-period-ms' was supplied but isn't a known config.
+2021-07-13 18:12:49,768 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka version: 2.5.0
+2021-07-13 18:12:49,768 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka commitId: 66563e712b0b9f84
+2021-07-13 18:12:49,769 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka startTimeMs: 1626214369768
+2021-07-13 18:12:49,787 INFO  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) ProducerConfig values:
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [oaw2.ocpa.milab.joshwest.me:30082]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = producer-2
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 5242880
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.apicurio.registry.serde.protobuf.ProtobufKafkaSerializer
+
+2021-07-13 18:12:49,793 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.artifact.group-id' was supplied but isn't a known config.
+2021-07-13 18:12:49,793 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.artifact.artifact-id' was supplied but isn't a known config.
+2021-07-13 18:12:49,793 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.find-latest' was supplied but isn't a known config.
+2021-07-13 18:12:49,793 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.url' was supplied but isn't a known config.
+2021-07-13 18:12:49,794 WARN  [org.apa.kaf.cli.pro.ProducerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.check-period-ms' was supplied but isn't a known config.
+2021-07-13 18:12:49,794 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka version: 2.5.0
+2021-07-13 18:12:49,794 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka commitId: 66563e712b0b9f84
+2021-07-13 18:12:49,794 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka startTimeMs: 1626214369794
+2021-07-13 18:12:49,807 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Quarkus Main Thread) Starting Kafka consumer on topic: samplea-topic with breakOnFirstError: false
+2021-07-13 18:12:49,812 INFO  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [oaw2.ocpa.milab.joshwest.me:30082]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id =
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = 8c6ec869-4f18-44bd-8226-f58f6480d68b
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 40000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class io.apicurio.registry.serde.protobuf.ProtobufKafkaDeserializer
+
+2021-07-13 18:12:49,830 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'specific.avro.reader' was supplied but isn't a known config.
+2021-07-13 18:12:49,830 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.artifact.group-id' was supplied but isn't a known config.
+2021-07-13 18:12:49,830 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.artifact.artifact-id' was supplied but isn't a known config.
+2021-07-13 18:12:49,830 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.url' was supplied but isn't a known config.
+2021-07-13 18:12:49,830 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.find-latest' was supplied but isn't a known config.
+2021-07-13 18:12:49,830 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.check-period-ms' was supplied but isn't a known config.
+2021-07-13 18:12:49,830 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka version: 2.5.0
+2021-07-13 18:12:49,831 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka commitId: 66563e712b0b9f84
+2021-07-13 18:12:49,832 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka startTimeMs: 1626214369830
+2021-07-13 18:12:49,833 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) Subscribing samplea-topic-Thread 0 to topic samplea-topic
+2021-07-13 18:12:49,835 INFO  [org.apa.kaf.cli.con.KafkaConsumer] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Subscribed to topic(s): samplea-topic
+2021-07-13 18:12:49,836 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Quarkus Main Thread) Starting Kafka consumer on topic: sampleb-topic with breakOnFirstError: false
+2021-07-13 18:12:49,837 INFO  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [oaw2.ocpa.milab.joshwest.me:30082]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id =
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = 5432d217-eacd-4eb2-9820-69ce24ed516f
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 40000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class io.apicurio.registry.serde.protobuf.ProtobufKafkaDeserializer
+
+2021-07-13 18:12:49,842 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'specific.avro.reader' was supplied but isn't a known config.
+2021-07-13 18:12:49,842 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.artifact.group-id' was supplied but isn't a known config.
+2021-07-13 18:12:49,842 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.artifact.artifact-id' was supplied but isn't a known config.
+2021-07-13 18:12:49,842 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.url' was supplied but isn't a known config.
+2021-07-13 18:12:49,842 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.find-latest' was supplied but isn't a known config.
+2021-07-13 18:12:49,842 WARN  [org.apa.kaf.cli.con.ConsumerConfig] (Quarkus Main Thread) The configuration 'apicurio.registry.check-period-ms' was supplied but isn't a known config.
+2021-07-13 18:12:49,842 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka version: 2.5.0
+2021-07-13 18:12:49,842 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka commitId: 66563e712b0b9f84
+2021-07-13 18:12:49,843 INFO  [org.apa.kaf.com.uti.AppInfoParser] (Quarkus Main Thread) Kafka startTimeMs: 1626214369842
+2021-07-13 18:12:49,843 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) Subscribing sampleb-topic-Thread 0 to topic sampleb-topic
+2021-07-13 18:12:49,844 INFO  [org.apa.kaf.cli.con.KafkaConsumer] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Subscribed to topic(s): sampleb-topic
+2021-07-13 18:12:49,847 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Routes startup summary (total:4 started:4)
+2021-07-13 18:12:49,847 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) 	Started route1 (kafka://samplea-topic)
+2021-07-13 18:12:49,847 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) 	Started route2 (kafka://sampleb-topic)
+2021-07-13 18:12:49,847 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) 	Started route3 (timer://producerTimerA)
+2021-07-13 18:12:49,847 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) 	Started route4 (timer://producerTimerB)
+2021-07-13 18:12:49,847 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Apache Camel 3.8.0 (camel-1) started in 22s623ms (build:0ms init:22s294ms start:329ms)
+2021-07-13 18:12:49,914 INFO  [org.apa.kaf.cli.Metadata] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] Cluster ID: vt4KJXacQbya_QzHMDzCkA
+2021-07-13 18:12:49,914 INFO  [org.apa.kaf.cli.Metadata] (kafka-producer-network-thread | producer-2) [Producer clientId=producer-2] Cluster ID: vt4KJXacQbya_QzHMDzCkA
+2021-07-13 18:12:49,933 INFO  [io.quarkus] (Quarkus Main Thread) streaming-app 1.0.0-SNAPSHOT on JVM (powered by Quarkus 1.12.2.Final) started in 27.436s. Listening on: http://localhost:8082
+2021-07-13 18:12:49,934 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2021-07-13 18:12:49,934 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [camel-ahc, camel-ahc-ws, camel-bean, camel-controlbus, camel-core, camel-direct, camel-http, camel-jackson, camel-jacksonxml, camel-jsonpath, camel-kafka, camel-management, camel-microprofile-health, camel-mock, camel-netty, camel-netty-http, camel-protobuf, camel-seda, camel-support-ahc, camel-support-common, camel-support-commons-logging, camel-support-httpclient, camel-support-jackson-dataformat-xml, camel-timer, camel-xml-jaxb, cdi, config-yaml, infinispan-client, kubernetes, resteasy, smallrye-health]
+2021-07-13 18:12:49,988 WARN  [org.apa.kaf.cli.NetworkClient] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Error while fetching metadata with correlation id 2 : {sampleb-topic=LEADER_NOT_AVAILABLE}
+2021-07-13 18:12:49,989 INFO  [org.apa.kaf.cli.Metadata] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Cluster ID: vt4KJXacQbya_QzHMDzCkA
+2021-07-13 18:12:49,993 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Discovered group coordinator 192.168.104.223:30683 (id: 2147483647 rack: null)
+2021-07-13 18:12:49,996 WARN  [org.apa.kaf.cli.NetworkClient] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Error while fetching metadata with correlation id 2 : {samplea-topic=LEADER_NOT_AVAILABLE}
+2021-07-13 18:12:49,996 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] (Re-)joining group
+2021-07-13 18:12:49,996 INFO  [org.apa.kaf.cli.Metadata] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Cluster ID: vt4KJXacQbya_QzHMDzCkA
+2021-07-13 18:12:50,004 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Discovered group coordinator 192.168.104.223:30683 (id: 2147483647 rack: null)
+2021-07-13 18:12:50,004 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] (Re-)joining group
+2021-07-13 18:12:50,078 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-07-13 18:12:50,079 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] (Re-)joining group
+2021-07-13 18:12:50,086 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-07-13 18:12:50,086 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] (Re-)joining group
+2021-07-13 18:12:50,193 WARN  [org.apa.kaf.cli.NetworkClient] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Error while fetching metadata with correlation id 7 : {samplea-topic=LEADER_NOT_AVAILABLE}
+2021-07-13 18:12:51,216 ERROR [org.apa.cam.pro.err.DefaultErrorHandler] (Camel (camel-1) thread #2 - timer://producerTimerA) Failed delivery for (MessageId: B44690E4D60E19A-0000000000000001 on ExchangeId: B44690E4D60E19A-0000000000000001). Exhausted after delivery attempt: 1 caught: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageA in the protobuf schema
+
+Message History (complete message history is disabled)
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[route3            ] [route3            ] [from[timer://producerTimerA?delay=1s&period=1s&repeatCount=1000]              ] [       367]
+	...
+[route3            ] [to1               ] [kafka:samplea-topic?brokers={{aregsandbox.kafka.brokers}}&valueSerializer=io.a] [         0]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageA in the protobuf schema
+
+2021-07-13 18:12:51,219 WARN  [org.apa.cam.com.tim.TimerConsumer] (Camel (camel-1) thread #2 - timer://producerTimerA) Error processing exchange. Exchange[B44690E4D60E19A-0000000000000001]. Caused by: [org.apache.kafka.common.errors.SerializationException - Missing message type MyMessageA in the protobuf schema]: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageA in the protobuf schema
+
+2021-07-13 18:12:51,857 ERROR [org.apa.cam.pro.err.DefaultErrorHandler] (Camel (camel-1) thread #2 - timer://producerTimerA) Failed delivery for (MessageId: B44690E4D60E19A-0000000000000002 on ExchangeId: B44690E4D60E19A-0000000000000002). Exhausted after delivery attempt: 1 caught: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageB in the protobuf schema
+
+Message History (complete message history is disabled)
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[route3            ] [route3            ] [from[timer://producerTimerA?delay=1s&period=1s&repeatCount=1000]              ] [         5]
+	...
+[route3            ] [to1               ] [kafka:samplea-topic?brokers={{aregsandbox.kafka.brokers}}&valueSerializer=io.a] [         0]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageB in the protobuf schema
+
+2021-07-13 18:12:51,857 WARN  [org.apa.cam.com.tim.TimerConsumer] (Camel (camel-1) thread #2 - timer://producerTimerA) Error processing exchange. Exchange[B44690E4D60E19A-0000000000000002]. Caused by: [org.apache.kafka.common.errors.SerializationException - Missing message type MyMessageB in the protobuf schema]: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageB in the protobuf schema
+
+2021-07-13 18:12:52,854 ERROR [org.apa.cam.pro.err.DefaultErrorHandler] (Camel (camel-1) thread #2 - timer://producerTimerA) Failed delivery for (MessageId: B44690E4D60E19A-0000000000000004 on ExchangeId: B44690E4D60E19A-0000000000000004). Exhausted after delivery attempt: 1 caught: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageA in the protobuf schema
+
+Message History (complete message history is disabled)
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[route3            ] [route3            ] [from[timer://producerTimerA?delay=1s&period=1s&repeatCount=1000]              ] [         1]
+	...
+[route3            ] [to1               ] [kafka:samplea-topic?brokers={{aregsandbox.kafka.brokers}}&valueSerializer=io.a] [         0]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageA in the protobuf schema
+
+2021-07-13 18:12:52,854 WARN  [org.apa.cam.com.tim.TimerConsumer] (Camel (camel-1) thread #2 - timer://producerTimerA) Error processing exchange. Exchange[B44690E4D60E19A-0000000000000004]. Caused by: [org.apache.kafka.common.errors.SerializationException - Missing message type MyMessageA in the protobuf schema]: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageA in the protobuf schema
+
+2021-07-13 18:12:53,141 INFO  [org.apa.kaf.cli.con.int.ConsumerCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Finished assignment for group at generation 1: {consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2-c1387db7-4711-435f-9190-944391a4763a=Assignment(partitions=[sampleb-topic-0])}
+2021-07-13 18:12:53,153 INFO  [org.apa.kaf.cli.con.int.ConsumerCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Finished assignment for group at generation 1: {consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1-cde4bb18-e333-49ef-9f46-019a8f7c8961=Assignment(partitions=[samplea-topic-0])}
+2021-07-13 18:12:53,256 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Successfully joined group with generation 1
+2021-07-13 18:12:53,258 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Successfully joined group with generation 1
+2021-07-13 18:12:53,261 INFO  [org.apa.kaf.cli.con.int.ConsumerCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Adding newly assigned partitions: samplea-topic-0
+2021-07-13 18:12:53,261 INFO  [org.apa.kaf.cli.con.int.ConsumerCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Adding newly assigned partitions: sampleb-topic-0
+2021-07-13 18:12:53,283 INFO  [org.apa.kaf.cli.con.int.ConsumerCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Found no committed offset for partition samplea-topic-0
+2021-07-13 18:12:53,283 INFO  [org.apa.kaf.cli.con.int.ConsumerCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Found no committed offset for partition sampleb-topic-0
+2021-07-13 18:12:53,296 INFO  [org.apa.kaf.cli.con.int.SubscriptionState] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Resetting offset for partition samplea-topic-0 to offset 0.
+2021-07-13 18:12:53,303 INFO  [org.apa.kaf.cli.con.int.SubscriptionState] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Resetting offset for partition sampleb-topic-0 to offset 3.
+2021-07-13 18:12:53,858 ERROR [org.apa.cam.pro.err.DefaultErrorHandler] (Camel (camel-1) thread #2 - timer://producerTimerA) Failed delivery for (MessageId: B44690E4D60E19A-0000000000000007 on ExchangeId: B44690E4D60E19A-0000000000000007). Exhausted after delivery attempt: 1 caught: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageB in the protobuf schema
+
+Message History (complete message history is disabled)
+---------------------------------------------------------------------------------------------------------------------------------------
+RouteId              ProcessorId          Processor                                                                        Elapsed (ms)
+[route3            ] [route3            ] [from[timer://producerTimerA?delay=1s&period=1s&repeatCount=1000]              ] [         1]
+	...
+[route3            ] [to1               ] [kafka:samplea-topic?brokers={{aregsandbox.kafka.brokers}}&valueSerializer=io.a] [         0]
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------
+: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageB in the protobuf schema
+
+2021-07-13 18:12:53,859 WARN  [org.apa.cam.com.tim.TimerConsumer] (Camel (camel-1) thread #2 - timer://producerTimerA) Error processing exchange. Exchange[B44690E4D60E19A-0000000000000007]. Caused by: [org.apache.kafka.common.errors.SerializationException - Missing message type MyMessageB in the protobuf schema]: org.apache.kafka.common.errors.SerializationException: Missing message type MyMessageB in the protobuf schema
+
+2021-07-13 18:12:53,901 INFO  [com.are.ser.ConsumerService] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) Received type: class com.agregsandbox.modelb.MyMessageD
+2021-07-13 18:12:53,925 INFO  [route2] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) consumer timerB fired
+headers: {apicurio.protobuf.type=[B@51e9a676, apicurio.value.globalId=[B@6f726096, apicurio.value.msgType=[B@7ba5d5ca, genCount=[B@4d722152, kafka.HEADERS=RecordHeaders(headers = [RecordHeader(key = genCount, value = [0, 0, 39, 19]), RecordHeader(key = apicurio.value.globalId, value = [0, 0, 0, 0, 0, 0, 0, 2]), RecordHeader(key = apicurio.value.msgType, value = [99, 111, 109, 46, 97, 103, 114, 101, 103, 115, 97, 110, 100, 98, 111, 120, 46, 109, 111, 100, 101, 108, 98, 46, 77, 121, 77, 101, 115, 115, 97, 103, 101, 68]), RecordHeader(key = apicurio.protobuf.type, value = [77, 121, 77, 101, 115, 115, 97, 103, 101, 68])], isReadOnly = false), kafka.OFFSET=3, kafka.PARTITION=0, kafka.TIMESTAMP=1626214373857, kafka.TOPIC=sampleb-topic}
+body: id: 10003
+name: "message d 10003"
+timestamp {
+  seconds: 1626214373
+  nanos: 857454000
+}
+
+^C2021-07-13 18:12:54,347 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) Apache Camel 3.8.0 (camel-1) shutting down
+2021-07-13 18:12:54,350 INFO  [org.apa.kaf.cli.pro.KafkaProducer] (Shutdown thread) [Producer clientId=producer-2] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2021-07-13 18:12:54,358 INFO  [org.apa.kaf.cli.pro.KafkaProducer] (Shutdown thread) [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2021-07-13 18:12:54,361 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Shutdown thread) Stopping Kafka consumer on topic: sampleb-topic
+2021-07-13 18:12:56,365 INFO  [org.apa.cam.imp.eng.BaseExecutorServiceManager] (Shutdown thread) Waited 2s4ms for ExecutorService: org.apache.camel.util.concurrent.RejectableThreadPoolExecutor@5bfe4ef3[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0][KafkaConsumer[sampleb-topic]] to terminate...
+2021-07-13 18:12:58,371 INFO  [org.apa.cam.imp.eng.BaseExecutorServiceManager] (Shutdown thread) Waited 4s10ms for ExecutorService: org.apache.camel.util.concurrent.RejectableThreadPoolExecutor@5bfe4ef3[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0][KafkaConsumer[sampleb-topic]] to terminate...
+2021-07-13 18:12:58,927 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) Auto commitSync on stop sampleb-topic-Thread 0 from topic sampleb-topic
+2021-07-13 18:12:58,937 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) Unsubscribing sampleb-topic-Thread 0 from topic sampleb-topic
+2021-07-13 18:12:58,938 INFO  [org.apa.kaf.cli.con.int.ConsumerCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Revoke previously assigned partitions sampleb-topic-0
+2021-07-13 18:12:58,948 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Member consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2-c1387db7-4711-435f-9190-944391a4763a sending LeaveGroup request to coordinator 192.168.104.223:30683 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2021-07-13 18:12:58,950 INFO  [org.apa.kaf.cli.con.KafkaConsumer] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) [Consumer clientId=consumer-5432d217-eacd-4eb2-9820-69ce24ed516f-2, groupId=5432d217-eacd-4eb2-9820-69ce24ed516f] Unsubscribed all topics or patterns and assigned partitions
+2021-07-13 18:12:58,970 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Camel (camel-1) thread #1 - KafkaConsumer[sampleb-topic]) Terminating KafkaConsumer thread: sampleb-topic-Thread 0 receiving from topic: sampleb-topic
+2021-07-13 18:12:58,971 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Shutdown thread) Stopping Kafka consumer on topic: samplea-topic
+2021-07-13 18:12:59,843 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) Auto commitSync on stop samplea-topic-Thread 0 from topic samplea-topic
+2021-07-13 18:12:59,908 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) Unsubscribing samplea-topic-Thread 0 from topic samplea-topic
+2021-07-13 18:12:59,908 INFO  [org.apa.kaf.cli.con.int.ConsumerCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Revoke previously assigned partitions samplea-topic-0
+2021-07-13 18:12:59,908 INFO  [org.apa.kaf.cli.con.int.AbstractCoordinator] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Member consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1-cde4bb18-e333-49ef-9f46-019a8f7c8961 sending LeaveGroup request to coordinator 192.168.104.223:30683 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2021-07-13 18:12:59,908 INFO  [org.apa.kaf.cli.con.KafkaConsumer] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) [Consumer clientId=consumer-8c6ec869-4f18-44bd-8226-f58f6480d68b-1, groupId=8c6ec869-4f18-44bd-8226-f58f6480d68b] Unsubscribed all topics or patterns and assigned partitions
+2021-07-13 18:12:59,915 INFO  [org.apa.cam.com.kaf.KafkaConsumer] (Camel (camel-1) thread #0 - KafkaConsumer[samplea-topic]) Terminating KafkaConsumer thread: samplea-topic-Thread 0 receiving from topic: samplea-topic
+2021-07-13 18:12:59,917 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) Routes shutdown summary (total:4 stopped:4)
+2021-07-13 18:12:59,917 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) 	Stopped route1 (kafka://samplea-topic)
+2021-07-13 18:12:59,917 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) 	Stopped route2 (kafka://sampleb-topic)
+2021-07-13 18:12:59,917 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) 	Stopped route3 (timer://producerTimerA)
+2021-07-13 18:12:59,918 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) 	Stopped route4 (timer://producerTimerB)
+2021-07-13 18:12:59,920 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) Apache Camel 3.8.0 (camel-1) shutdown in 5s573ms (uptime:10s402ms)
+2021-07-13 18:12:59,979 INFO  [io.quarkus] (Shutdown thread) streaming-app stopped in 5.635s

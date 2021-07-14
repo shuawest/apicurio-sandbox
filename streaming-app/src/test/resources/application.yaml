@@ -1,0 +1,24 @@
+# Camel Config
+camel:
+    context: 
+        name: mockapp
+
+registryurl: http://apicurioregistry-aregsandbox.apps.ocpa.milab.joshwest.me/apis/registry/v2
+registryurlProp: apicurio.registry.url
+globalid: io.apicurio.registry.utils.serde.strategy.GetOrCreateIdStrategy
+
+# CyptoAI gateway config
+aregsandbox:
+    hawtio:
+      enabled: true
+      auth-enabled: false
+      war-location: /Users/jowest/dev/repos/coinbase/etc/hawtio.war
+      port: 9001
+    kafka:
+        brokers: oaw2.ocpa.milab.joshwest.me:30082 #nodeport
+    app:
+      name: mockapp
+      destination:
+        destination: kafka
+        topic-name: samples
+  
