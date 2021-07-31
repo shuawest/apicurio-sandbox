@@ -1,13 +1,11 @@
 syntax = "proto3";
 
-// v3
 
 option java_multiple_files = true;
 package com.agregsandbox.modela;
 option java_package = "com.agregsandbox.modela";
 
 import "google/protobuf/timestamp.proto";
-
 
 message GatewayErrorA {  
     string route = 1;
@@ -30,4 +28,27 @@ message MyMessageB {
     google.protobuf.Timestamp timestamp = 3;
 }
 
+message OneOfFactWrapper {
+    string topic = 1;
+    string prefix = 2;
+    string key = 3;
+    FactA factA = 20; 
+    FactB factB = 21; 
+}
+
+message FactWrapper2 {
+    string topic = 1;
+    string prefix = 2;
+    string key = 3;
+    FactA factA = 20; 
+    FactB factB = 21; 
+}
+
+message FactA {
+    string nameA = 1;
+}
+
+message FactB {
+    string nameB = 1;
+}
 

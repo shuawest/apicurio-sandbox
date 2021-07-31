@@ -23,6 +23,9 @@ public class ConsumerService extends EndpointRouteBuilder {
     @Override
     public void configure() throws Exception {
         
+        boolean value = true;
+        if(value) return;  
+        
         String ktopicA = KafkaUriBuilder.create(ProducerService.TOPIC_A)
             .appendProperty("brokers", "{{aregsandbox.kafka.brokers}}")
             .appendProperty("valueDeserializer", ProtobufKafkaDeserializer.class.getName())

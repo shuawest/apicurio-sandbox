@@ -10,14 +10,19 @@
     <!-- Quarkus -->
     <!-- <quarkus.platform.version>1.12.2.Final</quarkus.platform.version>
     <quarkus-plugin.version>1.12.2.Final</quarkus-plugin.version> -->
-    <quarkus.platform.version>1.12.2.Final</quarkus.platform.version>
-    <quarkus-plugin.version>1.12.2.Final</quarkus-plugin.version>
+    <quarkus.platform.version>2.0.3.Final</quarkus.platform.version>
+    <quarkus-plugin.version>2.0.3.Final</quarkus-plugin.version>
     <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.generate-code.grpc.scan-for-imports>all</quarkus.generate-code.grpc.scan-for-imports>
     <!-- <apicurio.version>1.3.2.Final-redhat-00002</apicurio.version> -->
     <!-- <apicurio.version>1.3.0.Final</apicurio.version> -->
+
+    <!-- Data Grid / Infinispan -->
+    <protostream.version>4.4.0.Final</protostream.version>
+
     <apicurio.version>2.0.1.Final</apicurio.version>
+    
     <!-- Build -->
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
@@ -48,6 +53,20 @@
       <artifactId>streaming-model</artifactId>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
+    <!-- <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-protobuf</artifactId>
+    </dependency> -->
+    <!-- <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>3.17.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>3.17.3</version>
+    </dependency> -->
 
     <!-- <dependency>
       <groupId>io.apicurio</groupId>
@@ -160,9 +179,34 @@
       <groupId>org.apache.camel.quarkus</groupId>
       <artifactId>camel-quarkus-kafka</artifactId>
     </dependency>
+    <!-- <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-kafka</artifactId>
+      <version>3.11.0</version> <! for fix https://issues.apache.org/jira/browse/CAMEL-16807 >
+    </dependency> -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-infinispan-client</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.infinispan.protostream</groupId>
+          <artifactId>protostream</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.infinispan.protostream</groupId>
+          <artifactId>protostream-processor</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.infinispan.protostream</groupId>
+      <artifactId>protostream</artifactId>
+      <version>${protostream.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.infinispan.protostream</groupId>
+      <artifactId>protostream-processor</artifactId>
+      <version>${protostream.version}</version>
     </dependency>
 
     <!-- Camel/Quarkus :: Web / Websockets -->

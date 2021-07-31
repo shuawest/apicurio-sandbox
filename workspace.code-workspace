@@ -1,10 +1,19 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "../apicurio-sandbox-openshift"
+		},
+		{
+			"path": "streaming-app"
+		},
+		{
+			"path": "streaming-model"
 		}
 	],
 	"settings": {
-		"java.configuration.updateBuildConfiguration": "automatic"
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar"
+		]
 	}
 }

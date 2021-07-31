@@ -5,17 +5,23 @@ import java.time.Instant;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
+import com.google.protobuf.Any;
+import com.agregsandbox.modela.FactA;
+import com.agregsandbox.modela.FactB;
 import com.agregsandbox.modela.MyMessageA;
 import com.agregsandbox.modela.MyMessageB;
+import com.agregsandbox.modela.OneOfFactWrapper;
 import com.agregsandbox.modelb.MyMessageC;
 import com.agregsandbox.modelb.MyMessageD;
 import com.aregsandbox.config.AppConfig;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.JsonFormat;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.endpoint.EndpointRouteBuilder;
+import org.apache.camel.component.kafka.KafkaComponent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,70 +45,104 @@ public class ProducerService extends EndpointRouteBuilder {
 
     @Override
     public void configure() throws Exception {
-       
+        getContext().setMessageHistory(true);
+        
+        boolean value = true;
+        if(value) return;        
+
         String kdestA = KafkaUriBuilder.create(ProducerService.TOPIC_A)
             .appendProperty("brokers", "{{aregsandbox.kafka.brokers}}")
             .appendProperty("clientId", "producerA")
             .appendProperty("valueSerializer", MyProtobufKafkaSerializer.class.getName())
             .appendProperty("maxRequestSize", "5242880")
             .appendAdditional(SerdeConfig.REGISTRY_URL, "{{registryurl}}")
-            .appendAdditional(SerdeConfig.SCHEMA_RESOLVER, MySchemaResolver.class.getName())
-            .appendAdditional(SerdeConfig.ARTIFACT_RESOLVER_STRATEGY, MyArtifactResolverStrategy.class.getName())
+            //.appendAdditional(SerdeConfig.SCHEMA_RESOLVER, MySchemaResolver.class.getName())
+            //.appendAdditional(SerdeConfig.ARTIFACT_RESOLVER_STRATEGY, MyArtifactResolverStrategy.class.getName())
             .appendAdditional(SerdeConfig.EXPLICIT_ARTIFACT_GROUP_ID, "aregsandbox")
             .appendAdditional(SerdeConfig.EXPLICIT_ARTIFACT_ID, "samplea")
             .appendAdditional(SerdeConfig.FIND_LATEST_ARTIFACT, "true")
             //.appendAdditional(SerdeConfig.CHECK_PERIOD_MS, "60000")
             .value();
-    
-        String kdestB = KafkaUriBuilder.create(ProducerService.TOPIC_B)
-            .appendProperty("brokers", "{{aregsandbox.kafka.brokers}}")
-            .appendProperty("clientId", "producerB")
-            .appendProperty("valueSerializer", MyProtobufKafkaSerializer.class.getName())
-            .appendProperty("maxRequestSize", "5242880")
-            .appendAdditional(SerdeConfig.REGISTRY_URL, "{{registryurl}}")
-            .appendAdditional(SerdeConfig.SCHEMA_RESOLVER, MySchemaResolver.class.getName())
-            .appendAdditional(SerdeConfig.ARTIFACT_RESOLVER_STRATEGY, MyArtifactResolverStrategy.class.getName())
-            .appendAdditional(SerdeConfig.EXPLICIT_ARTIFACT_GROUP_ID, "aregsandbox")
-            .appendAdditional(SerdeConfig.EXPLICIT_ARTIFACT_ID, "sampleb")
-            .appendAdditional(SerdeConfig.FIND_LATEST_ARTIFACT, "true")
-            //.appendAdditional(SerdeConfig.CHECK_PERIOD_MS, "60000")
-            .value();
-    
+
 
         log.info("Kafka connection A: {}\n\n\n", kdestA);
-        log.info("Kafka connection B: {}\n\n\n", kdestB);
-
+        
         from("timer:producerTimerA?repeatCount=1000&delay=1s&period=1s")
             .bean(this, "genA")
             //.log("producer timer fired ${headers.genCount}:\n${body}");
             .to(kdestA);
+    
+        // String kdestB = KafkaUriBuilder.create(ProducerService.TOPIC_B)
+        //     .appendProperty("brokers", "{{aregsandbox.kafka.brokers}}")
+        //     .appendProperty("clientId", "producerB")
+        //     .appendProperty("valueSerializer", MyProtobufKafkaSerializer.class.getName())
+        //     .appendProperty("maxRequestSize", "5242880")
+        //     .appendAdditional(SerdeConfig.REGISTRY_URL, "{{registryurl}}")
+        //     //.appendAdditional(SerdeConfig.SCHEMA_RESOLVER, MySchemaResolver.class.getName())
+        //     //.appendAdditional(SerdeConfig.ARTIFACT_RESOLVER_STRATEGY, MyArtifactResolverStrategy.class.getName())
+        //     .appendAdditional(SerdeConfig.EXPLICIT_ARTIFACT_GROUP_ID, "aregsandbox")
+        //     .appendAdditional(SerdeConfig.EXPLICIT_ARTIFACT_ID, "sampleb")
+        //     .appendAdditional(SerdeConfig.FIND_LATEST_ARTIFACT, "true")
+        //     //.appendAdditional(SerdeConfig.CHECK_PERIOD_MS, "60000")
+        //     .value();
+    
 
-        from("timer:producerTimerB?repeatCount=1000&delay=1s&period=1s")
-            .bean(this, "genB")
-            //.log("producer timer fired ${headers.genCount}:\n${body}");
-            .to(kdestB);
+        // log.info("Kafka connection B: {}\n\n\n", kdestB);
+
+        // from("timer:producerTimerB?repeatCount=1000&delay=1s&period=1s")
+        //     .bean(this, "genB")
+        //     //.log("producer timer fired ${headers.genCount}:\n${body}");
+        //     .to(kdestB);
     }
 
     public void genA(Exchange exchange) {   
         exchange.getOut().setHeader("genCount", genCountA);
 
-        if (genCountA % 2 == 0) {
-            MyMessageA.Builder abldr = MyMessageA.newBuilder();      
-            abldr.setId(genCountA);
-            abldr.setName("message a " + genCountA);
-            abldr.setTimestamp(tsFrom(Instant.now()));                    
+        OneOfFactWrapper.Builder f = OneOfFactWrapper.newBuilder();
+        f.setKey("20210729factA");
+        f.setTopic("samplea-topic");
+        f.setPrefix("apicurio-sandbox");
+        //f.setValue(value)
 
-            MyMessageA ma = abldr.build();
-            exchange.getOut().setBody(ma);
+        if (genCountA % 2 == 0) {
+            FactA.Builder abldr = FactA.newBuilder(); 
+            abldr.setNameA("a " + genCountA);
+
+            FactA ma = abldr.build();              
+            f.setFactA(ma);
+            //f.setFact(Any.pack(ma));
         } else {
-            MyMessageB.Builder bbldr = MyMessageB.newBuilder();      
-            bbldr.setId(genCountA);
-            bbldr.setName("message b " + genCountA);
-            bbldr.setTimestamp(tsFrom(Instant.now()));
-            
-            MyMessageB mb = bbldr.build();
-            exchange.getOut().setBody(mb);
+            FactB.Builder bbldr = FactB.newBuilder(); 
+            bbldr.setNameB("b " + genCountA);
+
+            FactB mb = bbldr.build();
+            f.setFactB(mb);
+            //f.setFact(Any.pack(mb));
         }
+
+        OneOfFactWrapper fo = f.build();
+
+        log.info("output wrapper: {}", fo);
+
+        exchange.getOut().setBody(fo);
+
+        // if (genCountA % 2 == 0) {
+        //     MyMessageA.Builder abldr = MyMessageA.newBuilder();      
+        //     abldr.setId(genCountA);
+        //     abldr.setName("message a " + genCountA);
+        //     abldr.setTimestamp(tsFrom(Instant.now()));                    
+
+        //     MyMessageA ma = abldr.build();
+        //     exchange.getOut().setBody(ma);
+        // } else {
+        //     MyMessageB.Builder bbldr = MyMessageB.newBuilder();      
+        //     bbldr.setId(genCountA);
+        //     bbldr.setName("message b " + genCountA);
+        //     bbldr.setTimestamp(tsFrom(Instant.now()));
+            
+        //     MyMessageB mb = bbldr.build();
+        //     exchange.getOut().setBody(mb);
+        // }
 
         genCountA++;
     }

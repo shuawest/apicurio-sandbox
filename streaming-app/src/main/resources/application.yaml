@@ -15,17 +15,48 @@ aregsandbox:
       war-location: /Users/jowest/dev/repos/coinbase/etc/hawtio.war
       port: 9001
     kafka:
-        brokers: oaw2.ocpa.milab.joshwest.me:30082 #nodeport
+        brokers: oaw2.ocpa.milab.joshwest.me:32029 #nodeport
     app:
       name: mockapp
       destination:
         destination: kafka
         topic-name: samples
+      registry:
+        url: http://apicurioregistry-aregsandbox.apps.ocpa.milab.joshwest.me/apis/registry/v2
+        group: aregsandbox
+        artifact: samplea
+        version: latest
     
+# Unit test configuration overrides
+"%test":
+    quarkus:
+        infinispan-client:
+            server-list: "oaw1.ocpa.milab.joshwest.me:30002"  
+            trust-store: /Users/jowest/dev/repos/apicurio-sandbox-openshift/keys/server.jks                         
+
+# Local dev test configuration overrides
+"%dev":
+    quarkus:
+        infinispan-client:
+            server-list: "oaw1.ocpa.milab.joshwest.me:30002;oaw2.ocpa.milab.joshwest.me:30002;oaw3.ocpa.milab.joshwest.me:30002"
+            trust-store: /Users/jowest/dev/repos/apicurio-sandbox-openshift/keys/server.jks
+
 # Quarkus Config
 quarkus:
     http:
       port: 8082
+    infinispan-client:
+        server-list: "aregsandbox-kvstore:11222"        
+        auth-username: developer
+        auth-password: asdfasdfasdf
+        auth-server-name: aregsandbox-kvstore
+        auth-realm: default
+        sasl-mechanism: PLAIN
+        client-intelligence: BASIC
+        trust-store: /mnt/clientcerts
+        trust-store-password: zxcvZXCVzxcvZXCV
+        trust-store-type: jks
+        use-schema-registration: true
     openshift:
         labels:
             app: mockapp

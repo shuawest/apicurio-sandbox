@@ -7,6 +7,21 @@ registryurl: http://apicurioregistry-aregsandbox.apps.ocpa.milab.joshwest.me/api
 registryurlProp: apicurio.registry.url
 globalid: io.apicurio.registry.utils.serde.strategy.GetOrCreateIdStrategy
 
+# # Unit test configuration overrides
+# "%test":
+#     quarkus:
+#         infinispan-client:
+#             server-list: "oaw1.ocpa.milab.joshwest.me:30002"  
+#             trust-store: /Users/jowest/dev/repos/apicurio-sandbox-openshift/keys/server.jks           
+#             auth-username: developer
+#             auth-password: asdfasdfasdf
+#             auth-server-name: aregsandbox-kvstore
+#             auth-realm: default
+#             sasl-mechanism: PLAIN
+#             client-intelligence: BASIC        
+#             trust-store-password: zxcvZXCVzxcvZXCV
+#             trust-store-type: jks                        
+
 # CyptoAI gateway config
 aregsandbox:
     hawtio:
@@ -15,7 +30,7 @@ aregsandbox:
       war-location: /Users/jowest/dev/repos/coinbase/etc/hawtio.war
       port: 9001
     kafka:
-        brokers: oaw2.ocpa.milab.joshwest.me:30082 #nodeport
+        brokers: oaw2.ocpa.milab.joshwest.me:32029 #nodeport
     app:
       name: mockapp
       destination:
